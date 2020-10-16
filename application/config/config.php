@@ -50,6 +50,9 @@ $config['twitter_consumer_secret'] = '';
 $config['twitter_access_token'] = '';
 $config['twitter_access_token_secret'] = '';
 
+$config['contact_us_email_address'] = 'contact@contact.com';
+
+
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL

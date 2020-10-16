@@ -23,7 +23,7 @@ class Home extends BaseController
         $this->load->model('emailsubscription_model');
         $this->load->model('brands_model');
         $this->load->model('testimonials_model');
-        $this->site_name = 'Maxima Ventures LLP';
+        $this->site_name = $this->config->item('site_title');
     }
 
     public function index(){
@@ -188,10 +188,9 @@ class Home extends BaseController
             $toMaxima = "Dear Maxima,\n\n  I have the following query.  Please respond at the earliest.\n\n"."Name : ".$name."\n Phone : ".$phone."\n Email : ".$email."\n Comments : ".$comments."\n I agree to the Privacy Policy : ".$accept_privacy_policy."\n\n Thanks And Regards\n".$name;
             mail("contact@maximaventuresllp.com","New Enquiry From ".$name,$toMaxima,$headerMaxima);
             
-            $headerCustomer = 'From:contact@maximaventuresllp.com';            
-            $toClient = "Dear ".$name.",\n\n At the outset, Team Maxima Ventures LLP is really thankful to you for the interest you have shown in our products/services.  We will get back to you on your query within 48 working hours.  In case of any urgent query, please feel free to contact us through WhatsApp on the numbers given below.\n\nAssuring you of our best services at all times.\n\n Thanks And Regards\n Team Maxima Ventures LLP\n M: 9619903590/9323609443";
-            mail($email,"Thanks for Contacting Maxima Ventures LLP ",$toClient,$headerCustomer);
-            // mail("contact@maximaventuresllp.com","Thanks for Contacting Maxima Ventures LLP ",$toClient);
+            $headerCustomer = 'From:'.$this->config->item('contact_us_email_address');            
+            $toClient = "Dear ".$name.",\n\n At the outset, Team ".$this->config->item('site_title')." is really thankful to you for the interest you have shown in our products/services.  We will get back to you on your query within 48 working hours.  In case of any urgent query, please feel free to contact us through WhatsApp on the numbers given below.\n\nAssuring you of our best services at all times.\n\n Thanks And Regards\n Team ".$this->config->item('site_title')."\n M: 9820009255";
+            mail($email,"Thanks for Contacting ".$this->config->item('site_title'),$toClient,$headerCustomer);
             
             $pageInfo['success_message_form'] = "Thank you for filling out your information!";
           } else {

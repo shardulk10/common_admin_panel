@@ -26,7 +26,7 @@ class User extends BaseController
      */
     public function index()
     {
-        $this->global['pageTitle'] = 'Maxima Ventures LLP : Dashboard';
+        $this->global['pageTitle'] = $this->config->item('site_title').': Dashboard';
 
         $this->loadViews("dashboard", $this->global, NULL , NULL);
     }
@@ -53,7 +53,7 @@ class User extends BaseController
 
             $data['userRecords'] = $this->user_model->userListing($searchText, $returns["page"], $returns["segment"]);
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : User Listing';
+            $this->global['pageTitle'] = $this->config->item('site_title').': User Listing';
 
             $this->loadViews("users", $this->global, $data, NULL);
         }
@@ -74,7 +74,7 @@ class User extends BaseController
             $data['roles'] = $this->user_model->getUserRoles();
             //$data['websites'] = $this->user_model->getWebsites();
            // print_r($data['websites']);die;
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New User';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Add New User';
 
             $this->loadViews("addNew", $this->global, $data, NULL);
         }
@@ -177,7 +177,7 @@ $userInfo = array('email'=>$email, 'password'=>getHashedPassword($password), 'ro
 			//$data['websites'] = $this->user_model->getWebsites();
 
             $data['userInfo'] = $this->user_model->getUserInfo($userId);
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit User';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Edit User';
 
             $this->loadViews("editOld", $this->global, $data, NULL);
         }
@@ -277,7 +277,7 @@ $userInfo = array('email'=>$email, 'password'=>getHashedPassword($password), 'ro
      */
     function loadChangePass()
     {
-        $this->global['pageTitle'] = 'Maxima Ventures LLP : Change Password';
+        $this->global['pageTitle'] = $this->config->item('site_title').': Change Password';
 
         $this->loadViews("changePassword", $this->global, NULL, NULL);
     }
@@ -330,7 +330,7 @@ $userInfo = array('email'=>$email, 'password'=>getHashedPassword($password), 'ro
      */
     function pageNotFound()
     {
-        $this->global['pageTitle'] = 'Maxima Ventures LLP : 404 - Page Not Found';
+        $this->global['pageTitle'] = $this->config->item('site_title').': 404 - Page Not Found';
 
         $this->loadViews("404", $this->global, NULL, NULL);
     }
@@ -367,7 +367,7 @@ $userInfo = array('email'=>$email, 'password'=>getHashedPassword($password), 'ro
 
             $data['userRecords'] = $this->user_model->loginHistory($userId, $searchText, $fromDate, $toDate, $returns["page"], $returns["segment"]);
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : User Login History';
+            $this->global['pageTitle'] = $this->config->item('site_title').': User Login History';
 
             $this->loadViews("loginHistory", $this->global, $data, NULL);
         }

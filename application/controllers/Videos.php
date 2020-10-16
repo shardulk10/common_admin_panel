@@ -12,7 +12,7 @@ class Videos extends BaseController
     }
 
    	public function index(){
-   		$this->global['pageTitle'] = 'Maxima Ventures LLP : Manage Videos';
+   		$this->global['pageTitle'] = $this->config->item('site_title').' : Manage Videos';
       $this->loadViews("dashboard", $this->global, NULL , NULL);
    	}
 
@@ -24,7 +24,7 @@ class Videos extends BaseController
       $count = $this->videos_model->videosListingCount($searchText);
       $returns = $this->paginationCompress ("manageVideos/", $count, 10 );
       $data['slideRecords'] = $this->videos_model->videosListing($searchText, $returns["page"],   $returns["segment"], $data['cube_id']);
-      $this->global['pageTitle'] = 'Maxima Ventures LLP : Videos Listing';
+      $this->global['pageTitle'] = $this->config->item('site_title').' : Videos Listing';
       $this->loadViews("videos", $this->global, $data, NULL);
     }
 
@@ -33,7 +33,7 @@ class Videos extends BaseController
                 redirect('manageVideos');
             }
             $data['slideInfo'] = $this->videos_model->getVideosInfo($slideId)[0];   
-			      $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Videos';
+			      $this->global['pageTitle'] = $this->config->item('site_title').' : Edit Videos';
             $this->loadViews("editVideos", $this->global, $data, NULL);
     }
 
@@ -62,7 +62,7 @@ class Videos extends BaseController
 
     function newVideos() {
             $this->global['pageTitle'] = "";
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New Video';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Add New Video';
             $this->loadViews("newVideos");
     }
 

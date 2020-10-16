@@ -25,7 +25,7 @@ class Staticpages extends BaseController
     }
 
    	public function index(){
-   		$this->global['pageTitle'] = 'Maxima Ventures LLP : Manage Static Pages';
+   		$this->global['pageTitle'] = $this->config->item('site_title').' : Manage Static Pages';
 
         $this->loadViews("dashboard", $this->global, NULL , NULL);
    	}
@@ -53,7 +53,7 @@ class Staticpages extends BaseController
 			$data['page_types'] = $this->page_types;
             $data['slideRecords'] = $this->staticpages_model->staticpagesListing($searchText, $returns["page"], $returns["segment"], $data['cube_id']);
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Static Pages Listing';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Static Pages Listing';
 
             $this->loadViews("staticpages", $this->global, $data, NULL);
 
@@ -75,7 +75,7 @@ class Staticpages extends BaseController
             $data['page_types'] = $this->page_types;
             $data['slideInfo'] = $this->staticpages_model->getStaticpageInfo($slideId);
 			//echo '<pre>';print_r($data['slideInfo']);die;
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Staticpage';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Edit Staticpage';
 
             $this->loadViews("editStaticpage", $this->global, $data, NULL);
 
@@ -158,7 +158,7 @@ class Staticpages extends BaseController
             //$data['cubes'] = $this->faqs_model->getActiveCubes();
 			//echo '<pre>';print_r($data['cubes']);die;
             $data['page_types'] = $this->page_types;
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New Static Page';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Add New Static Page';
 
             $this->loadViews("newStaticpage", $this->global, $data, NULL);
 

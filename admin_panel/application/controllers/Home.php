@@ -174,13 +174,12 @@ class Home extends BaseController
           
           if(!empty($name) && !empty($email) && !empty($phone) && !empty($comments)) {
           
-            $toMaxima = "Dear Maxima,\n\n I want details for below Query\n\n"."Name : ".$name."\n Phone : ".$phone."\n Email : ".$email."\n Comments : ".$comments."\n\n Thanks And Regards\n".$name;
-            mail("contact@maximaventuresllp.com","New Enquiry From ".$name." For ".$service,$toMaxima);
+            $toMaxima = "Dear ".$this->config->item('site_title').",\n\n I want details for below Query\n\n"."Name : ".$name."\n Phone : ".$phone."\n Email : ".$email."\n Comments : ".$comments."\n\n Thanks And Regards\n".$name;
+            mail($this->config->item('contact_us_email_address'),"New Enquiry From ".$name." For ".$service,$toMaxima);
             //mail("shardulk10@gmail.com","New Enquiry From ".$name,$toMaxima);
             
             $toClient = "Dear ".$name.",\n\n We Will Contact you Shortly for your Query\n\n Thanks And Regards\n Team Maxima";
-            mail($email,"Thanks for Contacting Maxima Ventures LLP ",$toClient);
-            // mail("contact@maximaventuresllp.com","Thanks for Contacting Maxima Ventures LLP ",$toClient);
+            mail($email,"Thanks for Contacting ".$this->config->item('site_title')." ",$toClient);
             
             redirect(base_url()."contact_us"); 
           } else {
