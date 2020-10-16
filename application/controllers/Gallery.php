@@ -12,7 +12,7 @@ class Banners extends BaseController
     }
 
    	public function index(){
-   		$this->global['pageTitle'] = 'Maxima Ventures LLP : Manage Gallery';
+   		$this->global['pageTitle'] = $this->config->item('site_title').' : Manage Gallery';
       $this->loadViews("dashboard", $this->global, NULL , NULL);
    	}
 
@@ -24,7 +24,7 @@ class Banners extends BaseController
       $count = $this->banners_model->galleryListingCount($searchText);
       $returns = $this->paginationCompress ("manageGallery/", $count, 10 );
       $data['slideRecords'] = $this->gallery_model->galleryListing($searchText, $returns["page"],   $returns["segment"], $data['cube_id']);
-      $this->global['pageTitle'] = 'Maxima Ventures LLP : Gallery Listing';
+      $this->global['pageTitle'] = $this->config->item('site_title').' : Gallery Listing';
       $this->loadViews("gallery", $this->global, $data, NULL);
     }
 
@@ -33,7 +33,7 @@ class Banners extends BaseController
                 redirect('manageGallery');
             }
             $data['slideInfo'] = $this->gallery_model->getGalleryInfo($slideId)[0];   
-			      $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Gallery';
+			      $this->global['pageTitle'] = $this->config->item('site_title').' : Edit Gallery';
             $this->loadViews("editGallery", $this->global, $data, NULL);
     }
 
@@ -68,7 +68,7 @@ class Banners extends BaseController
 
     function newGallery() {
             $this->global['pageTitle'] = "";
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New Gallery';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Add New Gallery';
             $this->loadViews("newGallery");
     }
 

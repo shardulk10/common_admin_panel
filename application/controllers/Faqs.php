@@ -23,7 +23,7 @@ class Faqs extends BaseController
     }
 
    	public function index(){
-   		$this->global['pageTitle'] = 'Maxima Ventures LLP : Manage Faqs';
+   		$this->global['pageTitle'] = $this->config->item('site_title').' : Manage Faqs';
 
         $this->loadViews("dashboard", $this->global, NULL , NULL);
    	}
@@ -52,7 +52,7 @@ class Faqs extends BaseController
 			}
             $data['slideRecords'] = $this->faqs_model->faqsListing($searchText, $returns["page"], $returns["segment"], $data['cube_id']);
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Faqs Listing';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Faqs Listing';
 
             $this->loadViews("faqs", $this->global, $data, NULL);
 
@@ -73,7 +73,7 @@ class Faqs extends BaseController
             //$data['cubes'] = $this->faqs_model->getActiveCubes();
             $data['slideInfo'] = $this->faqs_model->getFaqsInfo($slideId)[0];
 			//echo '<pre>';print_r($data['slideInfo']);die;
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Faqs';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Edit Faqs';
 
             $this->loadViews("editFaqs", $this->global, $data, NULL);
 
@@ -142,7 +142,7 @@ class Faqs extends BaseController
             //$data['cubes'] = $this->faqs_model->getActiveCubes();
 			//echo '<pre>';print_r($data['cubes']);die;
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New User';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Add New User';
 
             $this->loadViews("newFaqs");
 
