@@ -227,3 +227,13 @@ $route['editVideos'] = "videos/editVideos";
 $route['editVideos/(:num)'] = "videos/editVideos/$1";
 $route['updateVideos/(:num)'] = "videos/updateVideos/$1";
 $route['deleteVideos/(:num)'] = "videos/deleteVideos/$1";
+
+
+$route['newGallery'] = "gallery/newGallery";
+$route['addNewGallery'] = "gallery/addNewGallery";
+$route['manageGallery/(:num)'] = "gallery/manageGallery/$1";
+$route['manageGallery'] = "gallery/manageGallery";
+$route['editGallery'] = "gallery/editGallery";
+$route['editGallery/(:num)'] = "gallery/editGallery/$1";
+$route['updateGallery/(:num)'] = "gallery/updateGallery/$1";
+$route['deleteGallery/(:num)'] = "gallery/deleteGallery/$1";

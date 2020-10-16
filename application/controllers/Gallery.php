@@ -2,7 +2,7 @@
 
 require APPPATH . '/libraries/BaseController.php';
 
-class Banners extends BaseController
+class Gallery extends BaseController
 {
     public function __construct() {
         parent::__construct();
@@ -17,11 +17,11 @@ class Banners extends BaseController
    	}
 
    	function manageGallery() {
-    	$data['cube_id'] = $this->input->post('cube_id');
+        $data['cube_id'] = $this->input->post('cube_id');
 			$searchText = $this->security->xss_clean($this->input->post('searchText'));
       $data['searchText'] = $searchText;
       $this->load->library('pagination');
-      $count = $this->banners_model->galleryListingCount($searchText);
+      $count = $this->gallery_model->galleryListingCount($searchText);
       $returns = $this->paginationCompress ("manageGallery/", $count, 10 );
       $data['slideRecords'] = $this->gallery_model->galleryListing($searchText, $returns["page"],   $returns["segment"], $data['cube_id']);
       $this->global['pageTitle'] = $this->config->item('site_title').' : Gallery Listing';
@@ -95,7 +95,7 @@ class Banners extends BaseController
                     }
                 }
 
-                $result = $this->banners_model->addNewGallery($slideInfo);
+                $result = $this->gallery_model->addNewGallery($slideInfo);
                 if($result > 0)
                 {
                     $this->session->set_flashdata('success', 'New Gallery Added successfully');
