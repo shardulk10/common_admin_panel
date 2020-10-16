@@ -23,7 +23,7 @@ class Emailsubscription extends BaseController
     }
 
    	public function index(){
-   		$this->global['pageTitle'] = 'Maxima Ventures LLP : Manage Email Subscription';
+   		$this->global['pageTitle'] = $this->config->item('site_title').' : Manage Email Subscription';
 
         $this->loadViews("dashboard", $this->global, NULL , NULL);
    	}
@@ -45,7 +45,7 @@ class Emailsubscription extends BaseController
 
       $data['slideRecords'] = $this->emailsubscription_model->emailsubscriptionListing($searchText, $returns["page"], $returns["segment"]);
 
-      $this->global['pageTitle'] = 'Maxima Ventures LLP : Email Subscription Listing';
+      $this->global['pageTitle'] = $this->config->item('site_title').' : Email Subscription Listing';
 
       $this->loadViews("emailsubscription", $this->global, $data, NULL);
 
@@ -64,7 +64,7 @@ class Emailsubscription extends BaseController
 
             $data['slideInfo'] = $this->emailsubscription_model->getEmailSubscriptionInfo($emailsubscriptionId)[0];
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Email Subscription';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Edit Email Subscription';
 
             $this->loadViews("editEmailsubscription", $this->global, $data, NULL);
 
@@ -111,7 +111,7 @@ class Emailsubscription extends BaseController
     function newEmailsubscription()
     {
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New Email';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Add New Email';
 
             $this->loadViews("newEmailsubscription");
 

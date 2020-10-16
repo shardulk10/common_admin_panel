@@ -23,7 +23,7 @@ class Brands extends BaseController
     }
 
    	public function index(){
-   		$this->global['pageTitle'] = 'Maxima Ventures LLP : Manage Brands';
+   		$this->global['pageTitle'] = $this->config->item('site_title').' : Manage Brands';
         $this->loadViews("dashboard", $this->global, NULL , NULL);
    	}
 
@@ -40,7 +40,7 @@ class Brands extends BaseController
 			$returns = $this->paginationCompress ( "manageBrands/", $count, 10 );
             $data['slideRecords'] = $this->brands_model->brandsListing($searchText, $returns["page"], $returns["segment"], $data['cube_id']);
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Brands Listing';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Brands Listing';
             $this->loadViews("brands", $this->global, $data, NULL);
     }
 
@@ -54,7 +54,7 @@ class Brands extends BaseController
                 redirect('manageBrands');
             }
             $data['slideInfo'] = $this->brands_model->getBrandsInfo($slideId)[0];
-			$this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Brands';
+			$this->global['pageTitle'] = $this->config->item('site_title').' : Edit Brands';
             $this->loadViews("editBrands", $this->global, $data, NULL);
     }
 
@@ -108,7 +108,7 @@ class Brands extends BaseController
      */
     function newBrands()
     {
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New Brands';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Add New Brands';
             $this->loadViews("newBrands");
     }
 

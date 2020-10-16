@@ -27,7 +27,7 @@ class Cube extends BaseController
      */
     public function index()
     {
-        $this->global['pageTitle'] = 'Maxima Ventures LLP : Manage Cube';
+        $this->global['pageTitle'] = $this->config->item('site_title').' : Manage Cube';
         $this->loadViews("dashboard", $this->global, NULL , NULL);
     }
 
@@ -45,7 +45,7 @@ class Cube extends BaseController
 			$this->global['rows'] = $rows;
 			$this->global['cols'] = $cols;
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New Cube';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Add New Cube';
 
             $this->loadViews("newCube", $this->global, $data, NULL);
 
@@ -113,7 +113,7 @@ class Cube extends BaseController
 
             $data['slideRecords'] = $this->slide_model->cubeListing($searchText, $returns["page"], $returns["segment"]);
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Cube Listing';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Cube Listing';
 
             $this->loadViews("cubes", $this->global, $data, NULL);
 
@@ -136,7 +136,7 @@ class Cube extends BaseController
 			$this->global['cols'] = $cols;
 
             $data['slideInfo'] = $this->slide_model->getCubeInfo($cubeId)[0];
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Cube';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Edit Cube';
 
             $this->loadViews("editCube", $this->global, $data, NULL);
 

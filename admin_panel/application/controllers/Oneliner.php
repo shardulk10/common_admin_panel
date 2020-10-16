@@ -23,7 +23,7 @@ class Oneliner extends BaseController
     }
 
    	public function index(){
-   		$this->global['pageTitle'] = 'Maxima Ventures LLP : Manage One Liner';
+   		$this->global['pageTitle'] = $this->config->item('site_title').' : Manage One Liner';
 
         $this->loadViews("dashboard", $this->global, NULL , NULL);
    	}
@@ -45,7 +45,7 @@ class Oneliner extends BaseController
 
       $data['slideRecords'] = $this->oneliner_model->onelinerListing($searchText, $returns["page"], $returns["segment"]);
 
-      $this->global['pageTitle'] = 'Maxima Ventures LLP : Oneliner Listing';
+      $this->global['pageTitle'] = $this->config->item('site_title').' : Oneliner Listing';
 
       $this->loadViews("oneliner", $this->global, $data, NULL);
 
@@ -64,7 +64,7 @@ class Oneliner extends BaseController
 
             $data['slideInfo'] = $this->oneliner_model->getOnelinerInfo($onelinerId)[0];
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Oneliner';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Edit Oneliner';
 
             $this->loadViews("editOneliner", $this->global, $data, NULL);
 
@@ -109,7 +109,7 @@ class Oneliner extends BaseController
     function newOneliner()
     {
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New Oneliner';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Add New Oneliner';
 
             $this->loadViews("newOneliner");
 

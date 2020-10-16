@@ -23,7 +23,7 @@ class Home extends BaseController
         $this->load->model('emailsubscription_model');
         $this->load->model('brands_model');
         $this->load->model('testimonials_model');
-        $this->site_name = 'Maxima Ventures LLP';
+        $this->site_name = $this->config->item('site_title');
     }
 
     public function index(){

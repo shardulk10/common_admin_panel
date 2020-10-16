@@ -21,7 +21,7 @@ class Sitesettings extends BaseController
 
     function editSiteSettings()
     {
-        $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Site Settings';
+        $this->global['pageTitle'] = $this->config->item('site_title').' : Edit Site Settings';
         $this->loadViews("editSettings", $this->global, $data, NULL);
     }
 

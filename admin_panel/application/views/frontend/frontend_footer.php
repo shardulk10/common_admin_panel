@@ -53,7 +53,7 @@ $footer_bottom_content = $CI->Staticpages_model->getStaticDetailsUsingSlug('foot
 
                 </div> <!-- End footer row -->
                 <div class="col-md-12 footer-link">
-                  <p>Copyright @2019 All rights reserved by Maxima Ventures LLP </p>
+                  <p>Copyright @2019 All rights reserved by <?php echo $this->config->item('site_title');?> </p>
 
                    <ul class="social social-footer">
                             <li class="facebook"><a href="<?php echo $facebook_page_url;?>" target="_blank"><i class="fa fa-facebook"></i></a></li>

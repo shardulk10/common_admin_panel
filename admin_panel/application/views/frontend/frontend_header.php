@@ -8,7 +8,7 @@
     <!-- Basic Page Needs
   ================================================== -->
     <meta charset="utf-8">
-    <title>Maxima Ventures LLP - Home</title>
+    <title><?php echo $this->config->item('site_title');?> - Home</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
