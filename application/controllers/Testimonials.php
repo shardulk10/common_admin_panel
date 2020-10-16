@@ -23,7 +23,7 @@ class Testimonials extends BaseController
     }
 
    	public function index(){
-   		$this->global['pageTitle'] = 'Maxima Ventures LLP : Manage Testimonials';
+   		$this->global['pageTitle'] = $this->config->item('site_title').' : Manage Testimonials';
 
         $this->loadViews("dashboard", $this->global, NULL , NULL);
    	}
@@ -50,7 +50,7 @@ class Testimonials extends BaseController
 
             $data['slideRecords'] = $this->testimonials_model->testimonialsListing($searchText, $returns["page"], $returns["segment"], $data['cube_id']);
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Testimonials Listing';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Testimonials Listing';
 
             $this->loadViews("testimonials", $this->global, $data, NULL);
 
@@ -71,7 +71,7 @@ class Testimonials extends BaseController
             //$data['cubes'] = $this->profile_model->getActiveProfileCat();
             $data['slideInfo'] = $this->testimonials_model->getTestimonialsInfo($slideId)[0];
 			//echo '<pre>';print_r($data);die;
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Testimonials';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Edit Testimonials';
 
             $this->loadViews("editTestimonials", $this->global, $data, NULL);
 
@@ -159,7 +159,7 @@ class Testimonials extends BaseController
 			//echo '<pre>';print_r($data['cubes']);die;
             //$data['cubes'] = $this->testimonials_model->getActiveProfileCat();
             $this->global['pageTitle'] = "";
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New User';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Add New User';
 
             $this->loadViews("newTestimonials");
 
