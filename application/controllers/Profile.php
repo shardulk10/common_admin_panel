@@ -23,7 +23,7 @@ class Profile extends BaseController
     }
 
    	public function index(){
-   		$this->global['pageTitle'] = 'Maxima Ventures LLP : Manage Profile';
+   		$this->global['pageTitle'] = $this->config->item('site_title').': Manage Profile';
 
         $this->loadViews("dashboard", $this->global, NULL , NULL);
    	}
@@ -50,7 +50,7 @@ class Profile extends BaseController
 
             $data['slideRecords'] = $this->profile_model->profileListing($searchText, $returns["page"], $returns["segment"], $data['cube_id']);
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Profile Listing';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Profile Listing';
 
             $this->loadViews("profile", $this->global, $data, NULL);
 
@@ -71,7 +71,7 @@ class Profile extends BaseController
             $data['cubes'] = $this->profile_model->getActiveProfileCat();
             $data['slideInfo'] = $this->profile_model->getProfileInfo($slideId)[0];
 			//echo '<pre>';print_r($data);die;
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit profile';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Edit profile';
 
             $this->loadViews("editProfile", $this->global, $data, NULL);
 
@@ -164,7 +164,7 @@ class Profile extends BaseController
 			//echo '<pre>';print_r($data['cubes']);die;
             $data['cubes'] = $this->profile_model->getActiveProfileCat();
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New User';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Add New User';
 
             $this->loadViews("newProfile",$this->global, $data, NULL);
 
@@ -290,7 +290,7 @@ class Profile extends BaseController
 
             $data['slideRecords'] = $this->profile_model->profileCatListing($searchText, $returns["page"], $returns["segment"], $data['cube_id']);
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Profile Listing';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Profile Listing';
 
             $this->loadViews("profileCat", $this->global, $data, NULL);
 
@@ -311,7 +311,7 @@ class Profile extends BaseController
             //$data['cubes'] = $this->faqs_model->getActiveCubes();
             $data['slideInfo'] = $this->profile_model->getProfileCatInfo($slideId)[0];
             //echo '<pre>';print_r($data['slideInfo']);die;
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit profile';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Edit profile';
 
             $this->loadViews("editProfileCat", $this->global, $data, NULL);
 
@@ -391,7 +391,7 @@ class Profile extends BaseController
             //$data['cubes'] = $this->faqs_model->getActiveCubes();
             //echo '<pre>';print_r($data['cubes']);die;
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New User';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Add New User';
 
             $this->loadViews("newProfileCat");
 
