@@ -18,7 +18,7 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="#"><b>Maxima Ventures LLP</b><br>Admin System</a>
+        <a href="#"><b><?php echo $this->config->item('site_title');?></b><br>Admin System</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Sign In</p>

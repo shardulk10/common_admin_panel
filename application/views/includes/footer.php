@@ -2,9 +2,9 @@
 
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Maxima Ventures LLP</b> Admin System | Version 1.0
+          <b><?php echo $this->config->item('site_title');;?></b> Admin System | Version 1.0
         </div>
-        <strong>Copyright &copy; 2019-2020 <a href="<?php echo base_url(); ?>">Maxima Ventures LLP</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2019-2020 <a href="<?php echo base_url(); ?>"><?php echo $this->config->item('site_title');;?></a>.</strong> All rights reserved.
     </footer>
 
     <!-- jQuery UI 1.11.2 -->
