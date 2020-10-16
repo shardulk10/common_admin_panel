@@ -29,7 +29,7 @@ class Programme extends BaseController
     }
 
    	public function index(){
-   		$this->global['pageTitle'] = 'Maxima Ventures LLP : Manage Programme';
+   		$this->global['pageTitle'] = $this->config->item('site_title').': Manage Programme';
 
         $this->loadViews("dashboard", $this->global, NULL , NULL);
    	}
@@ -57,7 +57,7 @@ class Programme extends BaseController
             $data['slideRecords'] = $this->programme_model->programmeListing($searchText, $returns["page"], $returns["segment"], $data['cube_id']);
 
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Programme Listing';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Programme Listing';
 
             $this->loadViews("programme", $this->global, $data, NULL);
 
@@ -81,7 +81,7 @@ class Programme extends BaseController
             $data['slideInfo'] = $this->programme_model->getProgrammeInfo($slideId);
             //$data['totalBlocks'] = $this->getBlockNums();
 			//echo '<pre>';print_r($data['slideInfo']);die;
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Programme';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Edit Programme';
 
             $this->loadViews("editProgramme", $this->global, $data, NULL);
 
@@ -206,7 +206,7 @@ class Programme extends BaseController
             $data['faculties'] = $this->profile_model->getActiveProfile();
             $data['cubes'] = $this->programme_model->getActiveProgrammeCat();
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New User';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Add New User';
 
             $this->loadViews("newProgramme",$this->global, $data, NULL);
 

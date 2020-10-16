@@ -27,7 +27,7 @@ class Slide extends BaseController
      */
     public function index()
     {
-        $this->global['pageTitle'] = 'Maxima Ventures LLP : Manage Slide';
+        $this->global['pageTitle'] = $this->config->item('site_title').': Manage Slide';
 
         $this->loadViews("dashboard", $this->global, NULL , NULL);
     }
@@ -48,7 +48,7 @@ class Slide extends BaseController
 			$this->global['rows'] = $rows;
 			$this->global['cols'] = $cols;
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New User';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Add New User';
 
             $this->loadViews("newSlide", $this->global, $data, NULL);
 
@@ -197,7 +197,7 @@ class Slide extends BaseController
 			}
             $data['slideRecords'] = $this->slide_model->slideListing($searchText, $returns["page"], $returns["segment"], $data['cube_id']);
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Slide Listing';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Slide Listing';
 
             $this->loadViews("slides", $this->global, $data, NULL);
 
@@ -221,7 +221,7 @@ class Slide extends BaseController
             $data['cubes'] = $this->slide_model->getActiveCubes();
             $data['slideInfo'] = $this->slide_model->getSlideInfo($slideId)[0];
 			//echo '<pre>';print_r($data['slideInfo']);die;
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Slide';
+            $this->global['pageTitle'] = $this->config->item('site_title').': Edit Slide';
 
             $this->loadViews("editSlide", $this->global, $data, NULL);
 
