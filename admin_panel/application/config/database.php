@@ -80,25 +80,25 @@ error_reporting(E_ALL);
 
 if('testing'==ENVIRONMENT) {
 	define('DBHOST','localhost');
-	define('DBUSER','maximaventuresllp');
-	define('DBPASS','maximaventuresllp!@#123!@#');
-	define('DBNAME','maximaventuresllp');
+	define('DBUSER','root');
+	define('DBPASS','');
+	define('DBNAME','common_admin_panel');
 }
 elseif('development'==ENVIRONMENT) {
     define('DBHOST','localhost');
-	define('DBUSER','maximaventuresllp');
-	define('DBPASS','maximaventuresllp!@#123!@#');
-	define('DBNAME','maximaventuresllp');
+	define('DBUSER','root');
+	define('DBPASS','');
+	define('DBNAME','common_admin_panel');
 }elseif('alpha'==ENVIRONMENT) {
     define('DBHOST','localhost');
-	define('DBUSER','maximaventuresllp');
-	define('DBPASS','maximaventuresllp!@#123!@#');
-	define('DBNAME','maximaventuresllp');
+	define('DBUSER','root');
+	define('DBPASS','');
+	define('DBNAME','common_admin_panel');
 } else {
     define('DBHOST','localhost');
-	define('DBUSER','maximaventuresllp');
-	define('DBPASS','maximaventuresllp!@#123!@#');
-	define('DBNAME','maximaventuresllp');
+	define('DBUSER','root');
+	define('DBPASS','');
+	define('DBNAME','common_admin_panel');
 }
 
 $db['default'] = array(

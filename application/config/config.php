@@ -39,7 +39,7 @@ $config['base_url'] = $base;
 */
 $config['index_page'] = '';
 
-$config['site_title'] = 'Maxima Ventures LLP';
+$config['site_title'] = 'Comman Admin Panel';
 
 /*
 |--------------------------------------------------------------------------
