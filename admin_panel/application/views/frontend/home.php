@@ -230,7 +230,7 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
-                  <h2>Welcome To Maxima Ventures LLP</h2>
+                  <h2>Welcome To <?php echo $this->config->item('site_title');?></h2>
                   <div class="clearfix"></div>
                   <?php echo $home_short_about_us->body_content;?>
 

@@ -42,6 +42,7 @@ $config['base_url'] = $base;
 $config['index_page'] = '';
 
 $config['site_title'] = 'Comman Admin Panel';
+$config['short_site_title'] = 'CAP';
 
 
 $config['twitter_consumer_key'] = '';
