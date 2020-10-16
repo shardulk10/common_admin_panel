@@ -27,6 +27,8 @@ $base  = "http://".$_SERVER['HTTP_HOST'];
 $base .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 $config['base_url'] = $base;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -40,6 +42,12 @@ $config['base_url'] = $base;
 $config['index_page'] = '';
 
 $config['site_title'] = 'Comman Admin Panel';
+
+
+$config['twitter_consumer_key'] = '';
+$config['twitter_consumer_secret'] = '';
+$config['twitter_access_token'] = '';
+$config['twitter_access_token_secret'] = '';
 
 /*
 |--------------------------------------------------------------------------

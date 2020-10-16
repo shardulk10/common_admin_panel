@@ -23,7 +23,7 @@ class Homepage extends BaseController
     }
 
    	public function index(){
-   		$this->global['pageTitle'] = 'Maxima Ventures LLP : Manage HomePage';
+   		$this->global['pageTitle'] = $this->config->item('site_title').' : Manage HomePage';
 
         $this->loadViews("dashboard", $this->global, NULL , NULL);
    	}
@@ -52,7 +52,7 @@ class Homepage extends BaseController
 			}*/
             $data['slideRecords'] = $this->homepage_model->imageListing($searchText, $returns["page"], $returns["segment"], $data['cube_id']);
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Slider Listing';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Slider Listing';
 
             $this->loadViews("slider_image", $this->global, $data, NULL);
 
@@ -73,7 +73,7 @@ class Homepage extends BaseController
             //$data['cubes'] = $this->faqs_model->getActiveCubes();
             $data['slideInfo'] = $this->homepage_model->getAccordianImageInfo($slideId)[0];
 			//echo '<pre>';print_r($data['slideInfo']);die;
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Edit Image';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Edit Image';
 
             $this->loadViews("editAccordianImage", $this->global, $data, NULL);
 
@@ -149,7 +149,7 @@ class Homepage extends BaseController
             //$data['cubes'] = $this->faqs_model->getActiveCubes();
 			//echo '<pre>';print_r($data['cubes']);die;
 
-            $this->global['pageTitle'] = 'Maxima Ventures LLP : Add New User';
+            $this->global['pageTitle'] = $this->config->item('site_title').' : Add New User';
 
             $this->loadViews("newAccordianImage");
 

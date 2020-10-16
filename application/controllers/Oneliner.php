@@ -21,10 +21,10 @@ class Oneliner extends BaseController
         $this->load->model('oneliner_model');
 		$this->isLoggedIn();
 		
-		$this->consumer_key = 'oVqUuB4VuPNglI3NxFEb5VckR'; // Enter your consumer key.
-		$this->consumer_secret = 'EUf4fSvlEQh1DQWrl3kkHIEsAg34jklgnQI9exHrVntj5hanse'; // Enter your consumer secret.
-		$this->access_token = '23036727-RTByHJdsYTiwQqzN9FlyqDqwDh1A3Zjw97qQjAH11'; // Enter your access token.
-		$this->access_token_secret = 'JqlPY0ftvFPNG8rR0f08bJx7WTuqr5qlCO2enRnxBtRWo'; // Enter your access token secret.
+		$this->consumer_key = $this->config->item('twitter_consumer_key'); // Enter your consumer key.
+		$this->consumer_secret = $this->config->item('twitter_consumer_secret'); // Enter your consumer secret.
+		$this->access_token = $this->config->item('twitter_access_token'); // Enter your access token.
+		$this->access_token_secret = $this->config->item('twitter_access_token_secret'); // Enter your access token secret.
         
     }
 
